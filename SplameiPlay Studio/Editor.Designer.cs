@@ -154,14 +154,14 @@ namespace SplameiPlay.Studio
             // expandAllToolStripMenuItem
             // 
             this.expandAllToolStripMenuItem.Name = "expandAllToolStripMenuItem";
-            this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.expandAllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.expandAllToolStripMenuItem.Text = "Expand All";
             this.expandAllToolStripMenuItem.Click += new System.EventHandler(this.expandAllToolStripMenuItem_Click);
             // 
             // collapseAllToolStripMenuItem
             // 
             this.collapseAllToolStripMenuItem.Name = "collapseAllToolStripMenuItem";
-            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.collapseAllToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.collapseAllToolStripMenuItem.Text = "Collapse All";
             this.collapseAllToolStripMenuItem.Click += new System.EventHandler(this.collapseAllToolStripMenuItem_Click);
             // 
@@ -258,6 +258,16 @@ namespace SplameiPlay.Studio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.keyIntValue.Enabled = false;
             this.keyIntValue.Location = new System.Drawing.Point(6, 73);
+            this.keyIntValue.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.keyIntValue.Minimum = new decimal(new int[] {
+            -2147483648,
+            0,
+            0,
+            -2147483648});
             this.keyIntValue.Name = "keyIntValue";
             this.keyIntValue.Size = new System.Drawing.Size(287, 20);
             this.keyIntValue.TabIndex = 1;
