@@ -183,19 +183,19 @@ namespace SplameiPlay.Studio
             // splameiDocsToolStripMenuItem
             // 
             this.splameiDocsToolStripMenuItem.Name = "splameiDocsToolStripMenuItem";
-            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.splameiDocsToolStripMenuItem.Text = "Splamei Docs";
             this.splameiDocsToolStripMenuItem.Click += new System.EventHandler(this.splameiDocsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(142, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -519,6 +519,7 @@ namespace SplameiPlay.Studio
             this.Name = "Editor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplameiPlay Studio - [path]";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Editor_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Editor_FormClosed);
             this.Load += new System.EventHandler(this.Editor_Load);
             this.menuStrip1.ResumeLayout(false);

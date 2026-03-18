@@ -472,6 +472,18 @@ namespace SplameiPlay.Studio
         {
             using (Process.Start("https://docs.veemo.uk")) { }
         }
+
+        private void Editor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isSaved)
+            {
+                if (MessageBox.Show("You have unsaved changes. Do you wish to exit now?\n\nAll of these un-saved changes will be lost", "SplameiPlay Studio", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+        }
     }
 }
 
