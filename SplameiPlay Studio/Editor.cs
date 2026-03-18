@@ -253,6 +253,8 @@ namespace SplameiPlay.Studio
 
         private bool validName(string name)
         {
+            if (string.IsNullOrEmpty(name)) { return false; }
+
             return Regex.IsMatch(name, @"^[a-zA-Z0-9_ -]+$") && !name.Contains(" ");
         }
 
@@ -286,6 +288,12 @@ namespace SplameiPlay.Studio
         private void addKeyButton_Click(object sender, EventArgs e)
         {
             if (treeView1.SelectedNode == null) { return; }
+
+            if (!validName(sectionKeyName.Text))
+            {
+                MessageBox.Show("That key name is invalid and not usable. Please make sure it only contains alphanumerical characters and no spaces", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             TreeNode sectionNode;
 
