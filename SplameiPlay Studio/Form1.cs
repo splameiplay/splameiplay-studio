@@ -67,19 +67,19 @@ namespace SplameiPlay.Studio
                     }
 
                     try
-                        {
-                            var data = SplameiPlayFiles.ReadSyntax(tmp);
+                    {
+                        var data = SplameiPlayFiles.ReadSyntax(tmp);
 
-                            editor = new Editor(data, path);
-                            editor.Show();
+                        editor = new Editor(data, path);
+                        editor.Show();
 
-                            this.Hide();
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("[StartForm] Unable to create file! - " + ex);
-                            MessageBox.Show($"Something went wrong when setting up your new file. Please contact us for support\n\nException:\n{ex}", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                        this.Hide();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("[StartForm] Unable to create file! - " + ex);
+                        MessageBox.Show($"Something went wrong when setting up your new file. Please contact us for support\n\nException:\n{ex}", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -97,6 +97,12 @@ namespace SplameiPlay.Studio
             }
             catch (Exception ex)
             {
+                this.Show();
+                if (!editor.IsDisposed)
+                {
+                    editor.Close();
+                }
+
                 Console.WriteLine("[StartForm] Unable to open file! - " + ex);
                 MessageBox.Show($"We can't open that file. Please make sure the syntax is correct and the file exists\n\nException:\n{ex}", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
