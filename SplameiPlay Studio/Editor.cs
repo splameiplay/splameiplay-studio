@@ -54,7 +54,7 @@ namespace SplameiPlay.Studio
 
             newKeyDataTypeDropdown.SelectedIndex = 0;
 
-            this.Text = $"SplameiPlay Studio [{path}*]";
+            this.Text = $"SplameiPlay Studio - [{path}*]";
         }
 
         private void Editor_FormClosed(object sender, FormClosedEventArgs e)
@@ -417,11 +417,11 @@ namespace SplameiPlay.Studio
         {
             if (isSaved)
             {
-                this.Text = $"SplameiPlay Studio [{path}]";
+                this.Text = $"SplameiPlay Studio - [{path}]";
             }
             else
             {
-                this.Text = $"SplameiPlay Studio [{path}*]";
+                this.Text = $"SplameiPlay Studio - [{path}*]";
             }
         }
 
