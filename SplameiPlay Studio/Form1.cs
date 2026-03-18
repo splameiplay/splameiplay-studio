@@ -46,21 +46,43 @@ namespace SplameiPlay.Studio
                     GlobalData.fileTypePreset fileTypePreset = fileCreate.typePreset;
                     string path = fileCreate.path;
 
-                    string[] tmp = new string[] { "Version=1.1", "Type=Installer", "TypeVersion=1.0", "", "Test", "Test2=hello", "Test3=10", "Test4=false" };
+                    string[] tmp = new string[] { "Version=1.1", "Type=Installer", "TypeVersion=1.0", "" };
+                    switch (fileTypePreset)
+                    {
+                        case GlobalData.fileTypePreset.Installer:
+                            tmp = new string[] { "Version=1.1", "Type=Installer", "TypeVersion=1.1", "", "Name=Project Name", "Author=Your name", "ExeName=Example.exe", "Url=https://example.com", "NoticesUrl=https://example.com", "ProjectUrl=https://example.com" };
+                            break;
+                        case GlobalData.fileTypePreset.Theme:
+                            tmp = new string[] { "Version=1.1", "Type=Theme", "TypeVersion=1.1", "", "Name=SplameiPlay Docs Demo", "BckColorOne=663b18", "BckColorTwo=8f2c21" };
+                            break;
+                        case GlobalData.fileTypePreset.Policy:
+                            tmp = new string[] { "Version=1.1", "Type=Policy", "TypeVersion=1.1", "", "RestrictStore=true", "RestrictCustomProjects=true", "DisableRecap=false", "DisableDiscordRP=true", "ForceOnlineMode=true", "InstallLocation=C:/Splamei", "/InstallProjects", "/ApplyPolicyFor", "/IgnorePolicyFor" };
+                            break;
+                        case GlobalData.fileTypePreset.PlayData:
+                            tmp = new string[] { "Version=1.1", "Type=ProjectPlayData", "TypeVersion=1.0", "", "Name=Project Name", "Author=Project author", "CurrentUrl=https://example.com", "EarlyAccess=false", "/MinSplameiplay", "MinSplameiplayVer=1000", "RequiredSplameiplayEdition=All", "/Windows", "MinMajorVer=10", "MinMinorVer=0", "MinBuildVer=19042", "MinRamMb=1500", "MinCpuSpeedMHz=2000" };
+                            break;
+                        case GlobalData.fileTypePreset.PublicData:
+                            tmp = new string[] { "Version=1.1", "Type=ProjectPublicData", "TypeVersion=1.0", "", "DescriptionShort=Short Description", "DescriptionLong=Long Description", "Locale=en,ja", "Author=Your name(s)", "TermsShort=Short terms", "TermsLong=Long terms", "/Windows", "Specs=Windows Specs", "/AgeRating", "Age=7", "/Urls", "NoticeUrl=https://example.com", "MoreInfoUrl=https://example.com" };
+                            break;
+                        case GlobalData.fileTypePreset.ReleaseData:
+                            tmp = new string[] { "Version=1.1", "Type=ProjectReleaseData", "TypeVersion=1.0", "", "Hash=Project zip hash", "ExeName=Example.exe", "Downloadable=true", "DynamicDownloadable=false" };
+                            break;
+                    }
+
                     try
-                    {
-                        var data = SplameiPlayFiles.ReadSyntax(tmp);
+                        {
+                            var data = SplameiPlayFiles.ReadSyntax(tmp);
 
-                        editor = new Editor(data, path);
-                        editor.Show();
+                            editor = new Editor(data, path);
+                            editor.Show();
 
-                        this.Hide();
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("[StartForm] Unable to create file! - " + ex);
-                        MessageBox.Show($"Something went wrong when setting up your new file. Please contact us for support\n\nException:\n{ex}", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                            this.Hide();
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("[StartForm] Unable to create file! - " + ex);
+                            MessageBox.Show($"Something went wrong when setting up your new file. Please contact us for support\n\nException:\n{ex}", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                 }
             }
         }
