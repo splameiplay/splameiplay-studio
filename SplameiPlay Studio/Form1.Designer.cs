@@ -102,7 +102,7 @@ namespace SplameiPlay.Studio
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "SplameiPlay File|*.splameiplay|Installer File|*.spinstaller|Theme File|*.sptheme";
+            this.openFileDialog1.Filter = "SplameiPlay Files|*.splameiplay;*.spinstaller;*.sptheme";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // splameiDocsButton
@@ -114,6 +114,7 @@ namespace SplameiPlay.Studio
             this.splameiDocsButton.TabIndex = 6;
             this.splameiDocsButton.Text = "Splamei Docs";
             this.splameiDocsButton.UseVisualStyleBackColor = true;
+            this.splameiDocsButton.Click += new System.EventHandler(this.splameiDocsButton_Click);
             // 
             // label2
             // 
