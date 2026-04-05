@@ -1,4 +1,5 @@
 
+
 ![SplameiPlay Studio Banner - Banner](https://raw.githubusercontent.com/splameiplay/splameiplay-studio/refs/heads/main/Images/Misc/GitHub%20Banner.png)
 
 <h1 align="center">
@@ -52,11 +53,19 @@ SplameiPlay Studio (should) be a native project to SplameiPlay. Because of this,
 2. Extract the downloaded file
 3. Run the file named `SplameiPlay Studio.exe`
 
-> It's not recommended to use this method because SplameiPlay Studio will not be automatically updated which can result in you making outdated SplameiPlay files
+> It's not recommended to use this method because SplameiPlay Studio will not be automatically updated which can result in you making outdated SplameiPlay files that won't work with the latest SplameiPlay app releases
 
 ## SplameiPlay Studio's documentation
 
 You can access SplameiPlay Studio's official documentation on it's Splamei Docs page found [here](https://docs.veemo.uk/splameiplay-studio).
+
+## Supported SplameiPlay file versions
+
+| Version | Supported versions |
+|--|--|
+| 1.1 | All releases |
+| 1.0 | Not supported |
+
 
 ## Building from source
 
@@ -73,7 +82,7 @@ This section presumes you have the .NET (Framework) SDKs, Windows SDKs and Git i
 
 ### MSBuild
 
-1. Clone the repo by running `git clone https://github.com/splameiplay/splameiplay-studio.git` in the target directory
+1. Clone this repo. This will depend on your Git setup and OS
 2. Change into the directory via `cd splameiplay-studio`
 3. Build the project using `msbuild  "SplameiPlay Studio.sln"  /p:Configuration=Release  /p:Platform="Any CPU"  /p:RestorePackages=false  /m  /verbosity:minimal`
 4. The build files should be located in `<Repo directory>\bin\Debug\SplameiPlay Studio.exe`
@@ -96,7 +105,7 @@ All code written directly for SplameiPlay Studio is licenced under the Mozilla P
 
 ## Branding Rights
 
-The name, branding, logo, etc. and any related assets for SplameiPlay and SplameiPlay is property of Splamei. These assets are not licensed under the MPL 2.0.
+The name, branding, logo, etc. and any related assets for SplameiPlay and SplameiPlay are property of Splamei. These assets are not licensed under the MPL 2.0.
 
 Any and all forks and derived works must use a different name and cannot imply endorsement or affiliation with Splamei, SplameiPlay or projects.
 
@@ -105,6 +114,6 @@ Any and all forks and derived works must use a different name and cannot imply e
 [YouTube](https://youtube.com/@splameiplay)
 [Twitter](https://twitter.com/splameiplay)
 [Bluesky](https://bsky.app/profile/splameiplay.bsky.social)
-[Discord](https://discord.gg/g2KTP5X9At)
+[Discord](https://www.veemo.uk/discord)
 
 ## Built with ❤️ in Visual Studio by Splamei and community
