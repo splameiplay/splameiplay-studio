@@ -66,7 +66,7 @@ namespace SplameiPlay.Studio
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(18, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(261, 242);
+            this.groupBox1.Size = new System.Drawing.Size(261, 295);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hashing";
@@ -78,7 +78,7 @@ namespace SplameiPlay.Studio
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(246, 74);
+            this.textBox1.Size = new System.Drawing.Size(246, 127);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "The hash will be displayed here";
             // 
@@ -130,7 +130,7 @@ namespace SplameiPlay.Studio
             // ToolSelect
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(291, 310);
+            this.ClientSize = new System.Drawing.Size(291, 363);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
