@@ -177,6 +177,7 @@ namespace SplameiPlay.Studio
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "Tools";
             this.toolsToolStripMenuItem.Click += new System.EventHandler(this.toolsToolStripMenuItem_Click);
@@ -194,19 +195,21 @@ namespace SplameiPlay.Studio
             // splameiDocsToolStripMenuItem
             // 
             this.splameiDocsToolStripMenuItem.Name = "splameiDocsToolStripMenuItem";
-            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.splameiDocsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.splameiDocsToolStripMenuItem.Text = "Splamei Docs";
             this.splameiDocsToolStripMenuItem.Click += new System.EventHandler(this.splameiDocsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.aboutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
