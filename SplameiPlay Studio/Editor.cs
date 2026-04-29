@@ -343,6 +343,7 @@ namespace SplameiPlay.Studio
 
             SplameiPlayFiles.fileValueData value = new SplameiPlayFiles.fileValueData();
             value.dataType = keyDataTypes[newKeyDataTypeDropdown.SelectedIndex];
+            value.stringValue = "";
 
             data[section][newKeyName] = value;
 
@@ -422,7 +423,7 @@ namespace SplameiPlay.Studio
             }
             catch (Exception ex)
             {
-                Console.WriteLine("[Editor] Failed to save file! - " + ex.Message);
+                Console.WriteLine("[Editor] Failed to save file! - " + ex);
                 MessageBox.Show("Something went wrong while saving the file. Please check the syntax and try again.", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
