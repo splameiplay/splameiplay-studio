@@ -48,6 +48,10 @@ namespace SplameiPlay.Studio
             typeVersionNum.Value = (decimal)typeVersion;
         }
 
+        private bool changedValues = false;
+        private bool canChangeValues = false;
+        private TreeNode lastSelectedNode = null;
+
         private void Editor_Load(object sender, EventArgs e)
         {
             refreshView();
@@ -65,6 +69,21 @@ namespace SplameiPlay.Studio
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            if (lastSelectedNode == treeView1.SelectedNode) { return; }
+
+            if (changedValues)
+            {
+                if (MessageBox.Show("You've not set the changes you've made to this item or section. Are you sure you want to change what's selected?\n\nAll unset changes will be lost", "SplameiPlay Studio", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    treeView1.SelectedNode = lastSelectedNode;
+                    return;
+                }
+            }
+
+            lastSelectedNode = treeView1.SelectedNode;
+            canChangeValues = false;
+            changedValues = false;
+
             currentNode = e.Node;
 
             resetSidebar();
@@ -119,11 +138,15 @@ namespace SplameiPlay.Studio
                 currentSection = e.Node.Text;
                 currentKey = null;
             }
+
+            canChangeValues = true;
         }
 
         private void setButton_Click(object sender, EventArgs e)
         {
             if (currentSection == null) { return; }
+
+            changedValues = false;
 
             if (currentNode.Parent == null)
             {
@@ -491,6 +514,36 @@ namespace SplameiPlay.Studio
             {
                 tools.ShowDialog();
             }
+        }
+
+        private void keyStringValue_TextChanged(object sender, EventArgs e)
+        {
+            if (canChangeValues) { changedValues = true; }
+        }
+
+        private void keyIntValue_ValueChanged(object sender, EventArgs e)
+        {
+            if (canChangeValues) { changedValues = true; }
+        }
+
+        private void keyFloatValue_ValueChanged(object sender, EventArgs e)
+        {
+            if (canChangeValues) { changedValues = true; }
+        }
+
+        private void keyBooleanValue_CheckedChanged(object sender, EventArgs e)
+        {
+            if (canChangeValues) { changedValues = true; }
+        }
+
+        private void keyName_TextChanged(object sender, EventArgs e)
+        {
+            if (canChangeValues) { changedValues = true; }
+        }
+
+        private void sectionName_TextChanged(object sender, EventArgs e)
+        {
+            if (canChangeValues) { changedValues = true; }
         }
     }
 }

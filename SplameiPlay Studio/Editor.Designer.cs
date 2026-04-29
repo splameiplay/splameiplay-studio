@@ -196,20 +196,20 @@ namespace SplameiPlay.Studio
             // 
             this.splameiDocsToolStripMenuItem.Name = "splameiDocsToolStripMenuItem";
             this.splameiDocsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.splameiDocsToolStripMenuItem.Text = "Splamei Docs";
             this.splameiDocsToolStripMenuItem.Click += new System.EventHandler(this.splameiDocsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(161, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -235,6 +235,7 @@ namespace SplameiPlay.Studio
             this.sectionName.Name = "sectionName";
             this.sectionName.Size = new System.Drawing.Size(258, 20);
             this.sectionName.TabIndex = 1;
+            this.sectionName.TextChanged += new System.EventHandler(this.sectionName_TextChanged);
             // 
             // label1
             // 
@@ -288,6 +289,7 @@ namespace SplameiPlay.Studio
             this.keyBooleanValue.TabIndex = 3;
             this.keyBooleanValue.Text = "Boolean value";
             this.keyBooleanValue.UseVisualStyleBackColor = true;
+            this.keyBooleanValue.CheckedChanged += new System.EventHandler(this.keyBooleanValue_CheckedChanged);
             // 
             // keyFloatValue
             // 
@@ -299,6 +301,7 @@ namespace SplameiPlay.Studio
             this.keyFloatValue.Name = "keyFloatValue";
             this.keyFloatValue.Size = new System.Drawing.Size(286, 20);
             this.keyFloatValue.TabIndex = 2;
+            this.keyFloatValue.ValueChanged += new System.EventHandler(this.keyFloatValue_ValueChanged);
             // 
             // keyIntValue
             // 
@@ -319,6 +322,7 @@ namespace SplameiPlay.Studio
             this.keyIntValue.Name = "keyIntValue";
             this.keyIntValue.Size = new System.Drawing.Size(287, 20);
             this.keyIntValue.TabIndex = 1;
+            this.keyIntValue.ValueChanged += new System.EventHandler(this.keyIntValue_ValueChanged);
             // 
             // keyStringValue
             // 
@@ -332,6 +336,7 @@ namespace SplameiPlay.Studio
             this.keyStringValue.Size = new System.Drawing.Size(286, 48);
             this.keyStringValue.TabIndex = 0;
             this.keyStringValue.Text = "1\r\n2\r\n3";
+            this.keyStringValue.TextChanged += new System.EventHandler(this.keyStringValue_TextChanged);
             // 
             // keyName
             // 
@@ -342,6 +347,7 @@ namespace SplameiPlay.Studio
             this.keyName.Name = "keyName";
             this.keyName.Size = new System.Drawing.Size(258, 20);
             this.keyName.TabIndex = 1;
+            this.keyName.TextChanged += new System.EventHandler(this.keyName_TextChanged);
             // 
             // label2
             // 
