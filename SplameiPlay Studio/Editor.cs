@@ -8,6 +8,7 @@ using SplameiPlay.SDK.Files;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -500,10 +501,15 @@ namespace SplameiPlay.Studio
         {
             if (!isSaved)
             {
-                if (MessageBox.Show("You have unsaved changes. Do you wish to exit now?\n\nAll of these un-saved changes will be lost", "SplameiPlay Studio", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                var exitWarningBox = MessageBox.Show("You have unsaved changes to this file. Do you want to save this file first?\n\nAll of these un-saved changes will be lost", "SplameiPlay Studio", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (exitWarningBox == DialogResult.Cancel)
                 {
                     e.Cancel = true;
                     return;
+                }
+                else if (exitWarningBox == DialogResult.Yes)
+                {
+                    saveFile(path);
                 }
             }
         }
