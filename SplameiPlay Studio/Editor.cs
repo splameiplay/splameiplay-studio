@@ -576,16 +576,20 @@ namespace SplameiPlay.Studio
                     saveFile(path);
                 }
 
-                mainForm.openNewFile();
-                isSaved = true;
-                closeAppOnExit = false;
-                this.Close();
+                if (mainForm.openNewFile() != DialogResult.Cancel)
+                {
+                    isSaved = true;
+                    closeAppOnExit = false;
+                    this.Close();
+                }
             }
             else
             {
-                closeAppOnExit = true;
-                mainForm.openNewFile();
-                this.Close();
+                if (mainForm.openNewFile() != DialogResult.Cancel)
+                {
+                    closeAppOnExit = false;
+                    this.Close();
+                }
             }
         }
     }

@@ -138,12 +138,9 @@ namespace SplameiPlay.Studio
             using (Process.Start("https://docs.veemo.uk/")) { }
         }
 
-        public void openNewFile()
+        public DialogResult openNewFile()
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
-            {
-                this.Show();
-            }
+            return openFileDialog1.ShowDialog();
         }
     }
 }
