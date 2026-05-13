@@ -71,7 +71,7 @@ namespace SplameiPlay.Studio
                     {
                         var data = SplameiPlayFiles.ReadSyntax(tmp);
 
-                        editor = new Editor(data, path);
+                        editor = new Editor(data, path, this);
                         editor.Show();
 
                         this.Hide();
@@ -93,7 +93,7 @@ namespace SplameiPlay.Studio
 
                 var data = SplameiPlayFiles.ReadFile(openFileDialog1.FileName);
 
-                editor = new Editor(data, openFileDialog1.FileName);
+                editor = new Editor(data, openFileDialog1.FileName, this);
                 editor.Show();
             }
             catch (Exception ex)
@@ -111,7 +111,7 @@ namespace SplameiPlay.Studio
 
         private void openButton_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            openNewFile();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -136,6 +136,14 @@ namespace SplameiPlay.Studio
         private void splameiDocsButton_Click(object sender, EventArgs e)
         {
             using (Process.Start("https://docs.veemo.uk/")) { }
+        }
+
+        public void openNewFile()
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+            {
+                this.Show();
+            }
         }
     }
 }

@@ -27,6 +27,9 @@ namespace SplameiPlay.Studio
         string currentKey;
         TreeNode currentNode;
 
+        Form1 mainForm = null;
+        bool closeAppOnExit = true;
+
         List<SplameiPlayFiles.fileValueDataType> keyDataTypes = new List<SplameiPlayFiles.fileValueDataType>()
         {
             SplameiPlayFiles.fileValueDataType.String,
@@ -36,7 +39,7 @@ namespace SplameiPlay.Studio
             SplameiPlayFiles.fileValueDataType.Unknown
         };
 
-        public Editor(SplameiPlayFiles.readFileResult fileData, string pathL)
+        public Editor(SplameiPlayFiles.readFileResult fileData, string pathL, Form1 mainFormL)
         {
             InitializeComponent();
 
@@ -47,6 +50,8 @@ namespace SplameiPlay.Studio
             typeTextBox.Text = type;
             typeVersion = fileData.typeVersion;
             typeVersionNum.Value = (decimal)typeVersion;
+
+            mainForm = mainFormL;
         }
 
         private bool changedValues = false;
@@ -65,7 +70,11 @@ namespace SplameiPlay.Studio
         private void Editor_FormClosed(object sender, FormClosedEventArgs e)
         {
             this.Dispose();
-            Environment.Exit(0);
+
+            if (closeAppOnExit)
+            {
+                Environment.Exit(0);
+            }
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -551,6 +560,33 @@ namespace SplameiPlay.Studio
         private void sectionName_TextChanged(object sender, EventArgs e)
         {
             if (canChangeValues) { changedValues = true; }
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!isSaved)
+            {
+                var exitWarningBox = MessageBox.Show("You have unsaved changes to this file. Do you want to save this file first?\n\nAll of these un-saved changes will be lost", "SplameiPlay Studio", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (exitWarningBox == DialogResult.Cancel)
+                {
+                    return;
+                }
+                else if (exitWarningBox == DialogResult.Yes)
+                {
+                    saveFile(path);
+                }
+
+                mainForm.openNewFile();
+                isSaved = true;
+                closeAppOnExit = false;
+                this.Close();
+            }
+            else
+            {
+                closeAppOnExit = true;
+                mainForm.openNewFile();
+                this.Close();
+            }
         }
     }
 }
