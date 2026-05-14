@@ -27,7 +27,7 @@ namespace SplameiPlay.Studio
         string currentKey;
         TreeNode currentNode;
 
-        Form1 mainForm = null;
+        MainForm mainForm = null;
         bool closeAppOnExit = true;
 
         List<SplameiPlayFiles.fileValueDataType> keyDataTypes = new List<SplameiPlayFiles.fileValueDataType>()
@@ -39,7 +39,7 @@ namespace SplameiPlay.Studio
             SplameiPlayFiles.fileValueDataType.Unknown
         };
 
-        public Editor(SplameiPlayFiles.readFileResult fileData, string pathL, Form1 mainFormL)
+        public Editor(SplameiPlayFiles.readFileResult fileData, string pathL, MainForm mainFormL)
         {
             InitializeComponent();
 
