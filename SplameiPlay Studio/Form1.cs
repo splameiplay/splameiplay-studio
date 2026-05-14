@@ -37,9 +37,15 @@ namespace SplameiPlay.Studio
 
         private void createButton_Click(object sender, EventArgs e)
         {
+            createNewFile();
+        }
+
+        public DialogResult createNewFile()
+        {
             using (FileCreate fileCreate = new FileCreate())
             {
-                if (fileCreate.ShowDialog() == DialogResult.OK)
+                var fileCreateResult = fileCreate.ShowDialog();
+                if (fileCreateResult == DialogResult.OK)
                 {
                     GlobalData.fileTypePreset fileTypePreset = fileCreate.typePreset;
                     string path = fileCreate.path;
@@ -82,6 +88,8 @@ namespace SplameiPlay.Studio
                         MessageBox.Show($"Something went wrong when setting up your new file. Please contact us for support\n\nException:\n{ex}", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+
+                return fileCreateResult;
             }
         }
 
