@@ -10,6 +10,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
+using System.Windows.Forms;
 
 namespace SplameiPlay.Studio
 {
@@ -28,34 +29,51 @@ namespace SplameiPlay.Studio
 
         public static string getDirectoryMd5Hash(string path, CancellationToken token = default)
         {
-            using (var sha256Obj = SHA256.Create())
+            try
             {
                 var files = Directory.GetFiles(path, "*", SearchOption.AllDirectories).OrderBy(f => f, StringComparer.OrdinalIgnoreCase);
 
-                foreach (var filename in files)
+                using (var sha256Obj = SHA256.Create())
                 {
-                    if (token != default)
+                    foreach (var filename in files)
                     {
-                        token.ThrowIfCancellationRequested();
-                    }
-
-                    var relPath = getRelativePath(path, filename);
-                    var pathBytes = Encoding.UTF8.GetBytes(relPath.Replace("\\", "/"));
-                    sha256Obj.TransformBlock(pathBytes, 0, pathBytes.Length, null, 0);
-
-                    using (var stream = File.OpenRead(filename))
-                    {
-                        var buffer = new byte[8192];
-                        int bytesRead = 0;
-                        while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                        if (token != default)
                         {
-                            sha256Obj.TransformBlock(buffer, 0, bytesRead, null, 0);
+                            token.ThrowIfCancellationRequested();
+                        }
+
+                        var relPath = getRelativePath(path, filename);
+                        var pathBytes = Encoding.UTF8.GetBytes(relPath.Replace("\\", "/"));
+                        sha256Obj.TransformBlock(pathBytes, 0, pathBytes.Length, null, 0);
+
+                        using (var stream = File.OpenRead(filename))
+                        {
+                            var buffer = new byte[8192];
+                            int bytesRead = 0;
+                            while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                            {
+                                sha256Obj.TransformBlock(buffer, 0, bytesRead, null, 0);
+                            }
                         }
                     }
+
+                    sha256Obj.TransformFinalBlock(Array.Empty<byte>(), 0, 0);
+                    return bytesToHexStr(sha256Obj.Hash);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[GlobalData] Failed to hash a dir! - {ex}");
+                if (ex.Message == "The device is not ready.")
+                {
+                    MessageBox.Show("Something went wrong when trying to get a directory hash. Please contact us for support or make an issue on GitHub\n\nWe're sorry for any issues this may cause", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("The device you selected isn't ready so we can't hash it. Please make sure it is ready (i.e. inserting a floppy disk into a floppy drive) and try again\n\nThis is not a SplameiPlay Studio issue", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                sha256Obj.TransformFinalBlock(Array.Empty<byte>(), 0, 0);
-                return bytesToHexStr(sha256Obj.Hash);
+                return "Failed to hash dir!";
             }
         }
 
