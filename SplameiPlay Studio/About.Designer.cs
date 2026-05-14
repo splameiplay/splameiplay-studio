@@ -76,7 +76,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(232, 105);
             this.label3.TabIndex = 3;
-            this.label3.Text = "This release was made on 18/03/2026\r\n\r\nMade with <3 by Splamei and community\r\n\r\nS" +
+            this.label3.Text = "This release was made on 14/05/2026\r\n\r\nMade with <3 by Splamei and community\r\n\r\nS" +
     "plameiPlay Studio is licenced under the\r\nMPL 2.0. Read the LICENCE file for more" +
     "\r\ninformation";
             // 
