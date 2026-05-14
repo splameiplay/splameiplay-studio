@@ -623,6 +623,33 @@ namespace SplameiPlay.Studio
                 }
             }
         }
+
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!isSaved)
+            {
+                var exitWarningBox = MessageBox.Show("You have unsaved changes to this file. Do you want to save this file first?\n\nAll of these un-saved changes will be lost", "SplameiPlay Studio", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (exitWarningBox == DialogResult.Cancel)
+                {
+                    return;
+                }
+                else if (exitWarningBox == DialogResult.Yes)
+                {
+                    saveFile(path);
+                }
+
+                isSaved = true;
+                closeAppOnExit = false;
+                mainForm.Show();
+                this.Close();
+            }
+            else
+            {
+                closeAppOnExit = false;
+                mainForm.Show();
+                this.Close();
+            }
+        }
     }
 }
 
