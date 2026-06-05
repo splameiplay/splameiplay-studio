@@ -575,7 +575,7 @@ namespace SplameiPlay.Studio
             this.MinimumSize = new System.Drawing.Size(700, 520);
             this.Name = "Editor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SplameiPlay Studio - [path]";
+            this.Text = "SplameiPlay Studio - [C:/Example/File.splameiplay]";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Editor_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Editor_FormClosed);
             this.Load += new System.EventHandler(this.Editor_Load);

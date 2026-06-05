@@ -54,7 +54,7 @@ namespace SplameiPlay.Studio
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(291, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome to SplameiPlay Studio";
+            this.label1.Text = "Welcome to SplameiPlay Studio!";
             // 
             // createButton
             // 
@@ -63,7 +63,7 @@ namespace SplameiPlay.Studio
             this.createButton.Name = "createButton";
             this.createButton.Size = new System.Drawing.Size(293, 88);
             this.createButton.TabIndex = 2;
-            this.createButton.Text = "Create new file";
+            this.createButton.Text = "Create a new file";
             this.createButton.UseVisualStyleBackColor = true;
             this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
@@ -74,7 +74,7 @@ namespace SplameiPlay.Studio
             this.openButton.Name = "openButton";
             this.openButton.Size = new System.Drawing.Size(294, 88);
             this.openButton.TabIndex = 3;
-            this.openButton.Text = "Open existing file";
+            this.openButton.Text = "Open an existing file";
             this.openButton.UseVisualStyleBackColor = true;
             this.openButton.Click += new System.EventHandler(this.openButton_Click);
             // 
