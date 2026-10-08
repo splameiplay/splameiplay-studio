@@ -105,7 +105,7 @@ All code written directly for SplameiPlay Studio is licenced under the Mozilla P
 
 ## Branding Rights
 
-The name, branding, logo, etc. and any related assets for SplameiPlay and SplameiPlay are property of Splamei. These assets are not licensed under the MPL 2.0.
+The name, branding, logo, etc. and any related assets for Splamei and SplameiPlay are property of Splamei. These assets are not licensed under the MPL 2.0.
 
 Any and all forks and derived works must use a different name and cannot imply endorsement or affiliation with Splamei, SplameiPlay or projects.
 

@@ -24,7 +24,7 @@ namespace SplameiPlay.Studio
         {
             if (string.IsNullOrEmpty(message))
             {
-                label1.Text = "Please wait while SplameiPlay Studio's code executes";
+                label1.Text = "Please wait while some code executes";
             }
             else
             {
