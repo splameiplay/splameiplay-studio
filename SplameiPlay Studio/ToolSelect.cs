@@ -48,7 +48,7 @@ namespace SplameiPlay.Studio
                 if (string.IsNullOrEmpty(folderBrowserDialog1.SelectedPath)) { return; }
 
                 timer1.Start();
-                wait.setMessage("Please wait while we get that directories hash");
+                wait.setMessage("Please wait while we hash that directory");
 
                 hashTask = Task.Run(() =>
                 {
@@ -97,7 +97,7 @@ namespace SplameiPlay.Studio
             if (string.IsNullOrEmpty(openFileDialog1.FileName)) { return; }
 
             timer1.Start();
-            wait.setMessage("Please wait while we get that file's hash");
+            wait.setMessage("Please wait while we hash that file");
 
             hashTask = Task.Run(() =>
             {
@@ -157,7 +157,7 @@ namespace SplameiPlay.Studio
 
             try
             {
-                wait.setMessage("");
+                wait.setMessage("Please wait while we cancel this request");
                 wait.setCanCancel(null);
                 await hashTask;
             }
