@@ -65,12 +65,6 @@ namespace SplameiPlay.Studio
             this.keyStringValue = new System.Windows.Forms.TextBox();
             this.keyName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.addSectionButton = new System.Windows.Forms.Button();
-            this.addKeyButton = new System.Windows.Forms.Button();
-            this.removeKeyButton = new System.Windows.Forms.Button();
-            this.removeSectionButton = new System.Windows.Forms.Button();
-            this.setButton = new System.Windows.Forms.Button();
-            this.refreshButton = new System.Windows.Forms.Button();
             this.newKeyDataTypeDropdown = new System.Windows.Forms.ComboBox();
             this.sectionKeyName = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -79,6 +73,12 @@ namespace SplameiPlay.Studio
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.refreshButton = new System.Windows.Forms.Button();
+            this.setButton = new System.Windows.Forms.Button();
+            this.removeSectionButton = new System.Windows.Forms.Button();
+            this.removeKeyButton = new System.Windows.Forms.Button();
+            this.addKeyButton = new System.Windows.Forms.Button();
+            this.addSectionButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,7 +95,7 @@ namespace SplameiPlay.Studio
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView1.Location = new System.Drawing.Point(12, 27);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(392, 414);
+            this.treeView1.Size = new System.Drawing.Size(392, 443);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -233,20 +233,20 @@ namespace SplameiPlay.Studio
             // 
             this.splameiDocsToolStripMenuItem.Name = "splameiDocsToolStripMenuItem";
             this.splameiDocsToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.splameiDocsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.splameiDocsToolStripMenuItem.Text = "Splamei Docs";
             this.splameiDocsToolStripMenuItem.Click += new System.EventHandler(this.splameiDocsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(161, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -395,74 +395,6 @@ namespace SplameiPlay.Studio
             this.label2.TabIndex = 0;
             this.label2.Text = "Name";
             // 
-            // addSectionButton
-            // 
-            this.addSectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addSectionButton.Location = new System.Drawing.Point(12, 447);
-            this.addSectionButton.Name = "addSectionButton";
-            this.addSectionButton.Size = new System.Drawing.Size(75, 23);
-            this.addSectionButton.TabIndex = 4;
-            this.addSectionButton.Text = "Add Section";
-            this.addSectionButton.UseVisualStyleBackColor = true;
-            this.addSectionButton.Click += new System.EventHandler(this.addSectionButton_Click);
-            // 
-            // addKeyButton
-            // 
-            this.addKeyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.addKeyButton.Location = new System.Drawing.Point(12, 476);
-            this.addKeyButton.Name = "addKeyButton";
-            this.addKeyButton.Size = new System.Drawing.Size(75, 23);
-            this.addKeyButton.TabIndex = 5;
-            this.addKeyButton.Text = "Add key";
-            this.addKeyButton.UseVisualStyleBackColor = true;
-            this.addKeyButton.Click += new System.EventHandler(this.addKeyButton_Click);
-            // 
-            // removeKeyButton
-            // 
-            this.removeKeyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.removeKeyButton.Enabled = false;
-            this.removeKeyButton.Location = new System.Drawing.Point(93, 476);
-            this.removeKeyButton.Name = "removeKeyButton";
-            this.removeKeyButton.Size = new System.Drawing.Size(94, 23);
-            this.removeKeyButton.TabIndex = 6;
-            this.removeKeyButton.Text = "Remove key";
-            this.removeKeyButton.UseVisualStyleBackColor = true;
-            this.removeKeyButton.Click += new System.EventHandler(this.removeKeyButton_Click);
-            // 
-            // removeSectionButton
-            // 
-            this.removeSectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.removeSectionButton.Enabled = false;
-            this.removeSectionButton.Location = new System.Drawing.Point(93, 447);
-            this.removeSectionButton.Name = "removeSectionButton";
-            this.removeSectionButton.Size = new System.Drawing.Size(94, 23);
-            this.removeSectionButton.TabIndex = 7;
-            this.removeSectionButton.Text = "Remove Section";
-            this.removeSectionButton.UseVisualStyleBackColor = true;
-            this.removeSectionButton.Click += new System.EventHandler(this.removeSectionButton_Click);
-            // 
-            // setButton
-            // 
-            this.setButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.setButton.Location = new System.Drawing.Point(647, 476);
-            this.setButton.Name = "setButton";
-            this.setButton.Size = new System.Drawing.Size(75, 23);
-            this.setButton.TabIndex = 8;
-            this.setButton.Text = "Set";
-            this.setButton.UseVisualStyleBackColor = true;
-            this.setButton.Click += new System.EventHandler(this.setButton_Click);
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshButton.Location = new System.Drawing.Point(566, 476);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(75, 23);
-            this.refreshButton.TabIndex = 9;
-            this.refreshButton.Text = "Refresh";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
             // newKeyDataTypeDropdown
             // 
             this.newKeyDataTypeDropdown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -474,17 +406,17 @@ namespace SplameiPlay.Studio
             "Float value",
             "Boolean value",
             "Empty value"});
-            this.newKeyDataTypeDropdown.Location = new System.Drawing.Point(193, 478);
+            this.newKeyDataTypeDropdown.Location = new System.Drawing.Point(140, 478);
             this.newKeyDataTypeDropdown.Name = "newKeyDataTypeDropdown";
-            this.newKeyDataTypeDropdown.Size = new System.Drawing.Size(211, 21);
+            this.newKeyDataTypeDropdown.Size = new System.Drawing.Size(100, 21);
             this.newKeyDataTypeDropdown.TabIndex = 10;
             // 
             // sectionKeyName
             // 
             this.sectionKeyName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sectionKeyName.Location = new System.Drawing.Point(193, 450);
+            this.sectionKeyName.Location = new System.Drawing.Point(246, 479);
             this.sectionKeyName.Name = "sectionKeyName";
-            this.sectionKeyName.Size = new System.Drawing.Size(211, 20);
+            this.sectionKeyName.Size = new System.Drawing.Size(158, 20);
             this.sectionKeyName.TabIndex = 11;
             // 
             // groupBox4
@@ -551,6 +483,86 @@ namespace SplameiPlay.Studio
             this.saveFileDialog1.Filter = "SplameiPlay File|*.splameiplay|Installer File|*.spinstaller|Theme File|*.sptheme";
             this.saveFileDialog1.Title = "Save As";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.refreshButton.BackgroundImage = global::SplameiPlay.Studio.Properties.Resources.Refresh;
+            this.refreshButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.refreshButton.Location = new System.Drawing.Point(670, 476);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(23, 23);
+            this.refreshButton.TabIndex = 9;
+            this.refreshButton.Text = " ";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // setButton
+            // 
+            this.setButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.setButton.BackgroundImage = global::SplameiPlay.Studio.Properties.Resources.Set;
+            this.setButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.setButton.Location = new System.Drawing.Point(699, 476);
+            this.setButton.Name = "setButton";
+            this.setButton.Size = new System.Drawing.Size(23, 23);
+            this.setButton.TabIndex = 8;
+            this.setButton.Text = " ";
+            this.setButton.UseVisualStyleBackColor = true;
+            this.setButton.Click += new System.EventHandler(this.setButton_Click);
+            // 
+            // removeSectionButton
+            // 
+            this.removeSectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removeSectionButton.BackgroundImage = global::SplameiPlay.Studio.Properties.Resources.Remove_Section;
+            this.removeSectionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.removeSectionButton.Enabled = false;
+            this.removeSectionButton.Location = new System.Drawing.Point(44, 476);
+            this.removeSectionButton.Name = "removeSectionButton";
+            this.removeSectionButton.Size = new System.Drawing.Size(26, 23);
+            this.removeSectionButton.TabIndex = 7;
+            this.removeSectionButton.Text = " ";
+            this.removeSectionButton.UseVisualStyleBackColor = true;
+            this.removeSectionButton.Click += new System.EventHandler(this.removeSectionButton_Click);
+            // 
+            // removeKeyButton
+            // 
+            this.removeKeyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.removeKeyButton.BackgroundImage = global::SplameiPlay.Studio.Properties.Resources.Remove_Key;
+            this.removeKeyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.removeKeyButton.Enabled = false;
+            this.removeKeyButton.Location = new System.Drawing.Point(108, 476);
+            this.removeKeyButton.Name = "removeKeyButton";
+            this.removeKeyButton.Size = new System.Drawing.Size(26, 23);
+            this.removeKeyButton.TabIndex = 6;
+            this.removeKeyButton.Text = " ";
+            this.removeKeyButton.UseVisualStyleBackColor = true;
+            this.removeKeyButton.Click += new System.EventHandler(this.removeKeyButton_Click);
+            // 
+            // addKeyButton
+            // 
+            this.addKeyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addKeyButton.BackgroundImage = global::SplameiPlay.Studio.Properties.Resources.Add_Key;
+            this.addKeyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addKeyButton.Location = new System.Drawing.Point(76, 476);
+            this.addKeyButton.Name = "addKeyButton";
+            this.addKeyButton.Size = new System.Drawing.Size(26, 23);
+            this.addKeyButton.TabIndex = 5;
+            this.addKeyButton.Text = " ";
+            this.addKeyButton.UseVisualStyleBackColor = true;
+            this.addKeyButton.Click += new System.EventHandler(this.addKeyButton_Click);
+            // 
+            // addSectionButton
+            // 
+            this.addSectionButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.addSectionButton.BackgroundImage = global::SplameiPlay.Studio.Properties.Resources.Add_Section;
+            this.addSectionButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.addSectionButton.Location = new System.Drawing.Point(12, 476);
+            this.addSectionButton.Name = "addSectionButton";
+            this.addSectionButton.Size = new System.Drawing.Size(26, 23);
+            this.addSectionButton.TabIndex = 4;
+            this.addSectionButton.Text = " ";
+            this.addSectionButton.UseVisualStyleBackColor = true;
+            this.addSectionButton.Click += new System.EventHandler(this.addSectionButton_Click);
             // 
             // Editor
             // 

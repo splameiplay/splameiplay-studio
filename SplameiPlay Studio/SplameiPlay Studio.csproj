@@ -136,6 +136,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SplameiPlay Studio.png" />
+    <None Include="Resources\Add Key.png" />
+    <None Include="Resources\Add Section.png" />
+    <None Include="Resources\Remove Section.png" />
+    <None Include="Resources\Remove Key.png" />
+    <None Include="Resources\Set.png" />
+    <None Include="Resources\Refresh.png" />
     <Content Include="SplameiPlay Studio.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
