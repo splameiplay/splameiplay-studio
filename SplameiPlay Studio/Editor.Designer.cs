@@ -34,6 +34,7 @@ namespace SplameiPlay.Studio
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Editor));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -79,6 +80,7 @@ namespace SplameiPlay.Studio
             this.removeKeyButton = new System.Windows.Forms.Button();
             this.addKeyButton = new System.Windows.Forms.Button();
             this.addSectionButton = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -95,7 +97,7 @@ namespace SplameiPlay.Studio
             | System.Windows.Forms.AnchorStyles.Left)));
             this.treeView1.Location = new System.Drawing.Point(12, 27);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(392, 443);
+            this.treeView1.Size = new System.Drawing.Size(280, 443);
             this.treeView1.TabIndex = 0;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -256,9 +258,9 @@ namespace SplameiPlay.Studio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.sectionName);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(410, 115);
+            this.groupBox1.Location = new System.Drawing.Point(298, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 63);
+            this.groupBox1.Size = new System.Drawing.Size(424, 63);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Section";
@@ -270,8 +272,9 @@ namespace SplameiPlay.Studio
             this.sectionName.Enabled = false;
             this.sectionName.Location = new System.Drawing.Point(48, 30);
             this.sectionName.Name = "sectionName";
-            this.sectionName.Size = new System.Drawing.Size(258, 20);
+            this.sectionName.Size = new System.Drawing.Size(370, 20);
             this.sectionName.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.sectionName, "The name of the section");
             this.sectionName.TextChanged += new System.EventHandler(this.sectionName_TextChanged);
             // 
             // label1
@@ -291,9 +294,9 @@ namespace SplameiPlay.Studio
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.keyName);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(410, 184);
+            this.groupBox2.Location = new System.Drawing.Point(298, 184);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(312, 286);
+            this.groupBox2.Size = new System.Drawing.Size(424, 286);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Definitions";
@@ -309,7 +312,7 @@ namespace SplameiPlay.Studio
             this.groupBox3.Controls.Add(this.keyStringValue);
             this.groupBox3.Location = new System.Drawing.Point(7, 70);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(299, 206);
+            this.groupBox3.Size = new System.Drawing.Size(411, 206);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Value";
@@ -325,6 +328,7 @@ namespace SplameiPlay.Studio
             this.keyBooleanValue.Size = new System.Drawing.Size(94, 17);
             this.keyBooleanValue.TabIndex = 3;
             this.keyBooleanValue.Text = "Boolean value";
+            this.toolTip1.SetToolTip(this.keyBooleanValue, "Key boolean value");
             this.keyBooleanValue.UseVisualStyleBackColor = true;
             this.keyBooleanValue.CheckedChanged += new System.EventHandler(this.keyBooleanValue_CheckedChanged);
             // 
@@ -336,8 +340,9 @@ namespace SplameiPlay.Studio
             this.keyFloatValue.Enabled = false;
             this.keyFloatValue.Location = new System.Drawing.Point(6, 99);
             this.keyFloatValue.Name = "keyFloatValue";
-            this.keyFloatValue.Size = new System.Drawing.Size(286, 20);
+            this.keyFloatValue.Size = new System.Drawing.Size(398, 20);
             this.keyFloatValue.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.keyFloatValue, "Key float value");
             this.keyFloatValue.ValueChanged += new System.EventHandler(this.keyFloatValue_ValueChanged);
             // 
             // keyIntValue
@@ -357,8 +362,9 @@ namespace SplameiPlay.Studio
             0,
             -2147483648});
             this.keyIntValue.Name = "keyIntValue";
-            this.keyIntValue.Size = new System.Drawing.Size(287, 20);
+            this.keyIntValue.Size = new System.Drawing.Size(399, 20);
             this.keyIntValue.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.keyIntValue, "Key integer value");
             this.keyIntValue.ValueChanged += new System.EventHandler(this.keyIntValue_ValueChanged);
             // 
             // keyStringValue
@@ -370,9 +376,10 @@ namespace SplameiPlay.Studio
             this.keyStringValue.Location = new System.Drawing.Point(7, 19);
             this.keyStringValue.Multiline = true;
             this.keyStringValue.Name = "keyStringValue";
-            this.keyStringValue.Size = new System.Drawing.Size(286, 48);
+            this.keyStringValue.Size = new System.Drawing.Size(398, 48);
             this.keyStringValue.TabIndex = 0;
             this.keyStringValue.Text = "1\r\n2\r\n3";
+            this.toolTip1.SetToolTip(this.keyStringValue, "Key string value");
             this.keyStringValue.TextChanged += new System.EventHandler(this.keyStringValue_TextChanged);
             // 
             // keyName
@@ -382,8 +389,9 @@ namespace SplameiPlay.Studio
             this.keyName.Enabled = false;
             this.keyName.Location = new System.Drawing.Point(48, 30);
             this.keyName.Name = "keyName";
-            this.keyName.Size = new System.Drawing.Size(258, 20);
+            this.keyName.Size = new System.Drawing.Size(370, 20);
             this.keyName.TabIndex = 1;
+            this.toolTip1.SetToolTip(this.keyName, "Key name");
             this.keyName.TextChanged += new System.EventHandler(this.keyName_TextChanged);
             // 
             // label2
@@ -410,14 +418,17 @@ namespace SplameiPlay.Studio
             this.newKeyDataTypeDropdown.Name = "newKeyDataTypeDropdown";
             this.newKeyDataTypeDropdown.Size = new System.Drawing.Size(100, 21);
             this.newKeyDataTypeDropdown.TabIndex = 10;
+            this.toolTip1.SetToolTip(this.newKeyDataTypeDropdown, "New Key data type");
             // 
             // sectionKeyName
             // 
-            this.sectionKeyName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.sectionKeyName.Location = new System.Drawing.Point(246, 479);
+            this.sectionKeyName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sectionKeyName.Location = new System.Drawing.Point(246, 478);
             this.sectionKeyName.Name = "sectionKeyName";
-            this.sectionKeyName.Size = new System.Drawing.Size(158, 20);
+            this.sectionKeyName.Size = new System.Drawing.Size(200, 20);
             this.sectionKeyName.TabIndex = 11;
+            this.toolTip1.SetToolTip(this.sectionKeyName, "New Section/Key name");
             // 
             // groupBox4
             // 
@@ -427,9 +438,9 @@ namespace SplameiPlay.Studio
             this.groupBox4.Controls.Add(this.typeTextBox);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Location = new System.Drawing.Point(410, 28);
+            this.groupBox4.Location = new System.Drawing.Point(298, 28);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(312, 81);
+            this.groupBox4.Size = new System.Drawing.Size(424, 81);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "File data";
@@ -441,8 +452,9 @@ namespace SplameiPlay.Studio
             this.typeVersionNum.DecimalPlaces = 1;
             this.typeVersionNum.Location = new System.Drawing.Point(86, 53);
             this.typeVersionNum.Name = "typeVersionNum";
-            this.typeVersionNum.Size = new System.Drawing.Size(220, 20);
+            this.typeVersionNum.Size = new System.Drawing.Size(332, 20);
             this.typeVersionNum.TabIndex = 3;
+            this.toolTip1.SetToolTip(this.typeVersionNum, "The version of the type of SplameiPlay file you\'re creating");
             this.typeVersionNum.Value = new decimal(new int[] {
             1,
             0,
@@ -456,8 +468,9 @@ namespace SplameiPlay.Studio
             | System.Windows.Forms.AnchorStyles.Right)));
             this.typeTextBox.Location = new System.Drawing.Point(86, 26);
             this.typeTextBox.Name = "typeTextBox";
-            this.typeTextBox.Size = new System.Drawing.Size(220, 20);
+            this.typeTextBox.Size = new System.Drawing.Size(332, 20);
             this.typeTextBox.TabIndex = 2;
+            this.toolTip1.SetToolTip(this.typeTextBox, "The type of file your creating (i.e. MyExampleFile)");
             this.typeTextBox.TextChanged += new System.EventHandler(this.typeTextBox_TextChanged);
             // 
             // label4
@@ -494,6 +507,7 @@ namespace SplameiPlay.Studio
             this.refreshButton.Size = new System.Drawing.Size(23, 23);
             this.refreshButton.TabIndex = 9;
             this.refreshButton.Text = " ";
+            this.toolTip1.SetToolTip(this.refreshButton, "Refresh");
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
@@ -507,6 +521,7 @@ namespace SplameiPlay.Studio
             this.setButton.Size = new System.Drawing.Size(23, 23);
             this.setButton.TabIndex = 8;
             this.setButton.Text = " ";
+            this.toolTip1.SetToolTip(this.setButton, "Set data");
             this.setButton.UseVisualStyleBackColor = true;
             this.setButton.Click += new System.EventHandler(this.setButton_Click);
             // 
@@ -521,6 +536,7 @@ namespace SplameiPlay.Studio
             this.removeSectionButton.Size = new System.Drawing.Size(26, 23);
             this.removeSectionButton.TabIndex = 7;
             this.removeSectionButton.Text = " ";
+            this.toolTip1.SetToolTip(this.removeSectionButton, "Remove Section");
             this.removeSectionButton.UseVisualStyleBackColor = true;
             this.removeSectionButton.Click += new System.EventHandler(this.removeSectionButton_Click);
             // 
@@ -535,6 +551,7 @@ namespace SplameiPlay.Studio
             this.removeKeyButton.Size = new System.Drawing.Size(26, 23);
             this.removeKeyButton.TabIndex = 6;
             this.removeKeyButton.Text = " ";
+            this.toolTip1.SetToolTip(this.removeKeyButton, "Remove Key");
             this.removeKeyButton.UseVisualStyleBackColor = true;
             this.removeKeyButton.Click += new System.EventHandler(this.removeKeyButton_Click);
             // 
@@ -548,6 +565,7 @@ namespace SplameiPlay.Studio
             this.addKeyButton.Size = new System.Drawing.Size(26, 23);
             this.addKeyButton.TabIndex = 5;
             this.addKeyButton.Text = " ";
+            this.toolTip1.SetToolTip(this.addKeyButton, "Add Key");
             this.addKeyButton.UseVisualStyleBackColor = true;
             this.addKeyButton.Click += new System.EventHandler(this.addKeyButton_Click);
             // 
@@ -561,8 +579,13 @@ namespace SplameiPlay.Studio
             this.addSectionButton.Size = new System.Drawing.Size(26, 23);
             this.addSectionButton.TabIndex = 4;
             this.addSectionButton.Text = " ";
+            this.toolTip1.SetToolTip(this.addSectionButton, "Add Section");
             this.addSectionButton.UseVisualStyleBackColor = true;
             this.addSectionButton.Click += new System.EventHandler(this.addSectionButton_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ShowAlways = true;
             // 
             // Editor
             // 
@@ -655,5 +678,6 @@ namespace SplameiPlay.Studio
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
