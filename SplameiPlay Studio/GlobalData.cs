@@ -68,7 +68,7 @@ namespace SplameiPlay.Studio
                 {
                     MessageBox.Show("The device you selected isn't ready so we can't hash it. Please make sure it is ready (i.e. inserting a floppy disk into a floppy drive) and try again\n\nThis is not a SplameiPlay Studio issue", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (ex.Message.Contains("Access to the path") && ex.Message.Contains("is denied."))
+                else if ((ex.Message.Contains("Access to the path") && ex.Message.Contains("is denied.")) || ex.Message.Contains("The file cannot be accessed by the system."))
                 {
                     MessageBox.Show("We can't access the directory you selected, or it contains sub-directories or files that we can't access. Because of this, we can't hash the whole directory.\nPlease make sure that your user account has access to the directory and files, then try again.\n\nThis is not a SplameiPlay Studio issue.", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
