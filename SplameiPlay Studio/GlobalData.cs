@@ -64,13 +64,17 @@ namespace SplameiPlay.Studio
             catch (Exception ex)
             {
                 Console.WriteLine($"[GlobalData] Failed to hash a dir! - {ex}");
-                if (ex.Message == "The device is not ready.")
+                if (ex.Message.Contains("The device is not ready."))
                 {
-                    MessageBox.Show("Something went wrong when trying to get a directory hash. Please contact us for support or make an issue on GitHub\n\nWe're sorry for any issues this may cause", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The device you selected isn't ready so we can't hash it. Please make sure it is ready (i.e. inserting a floppy disk into a floppy drive) and try again\n\nThis is not a SplameiPlay Studio issue", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (ex.Message.Contains("Access to the path") && ex.Message.Contains("is denied."))
+                {
+                    MessageBox.Show("We can't access the directory you selected, or it contains sub-directories or files that we can't access. Because of this, we can't hash the whole directory.\nPlease make sure that your user account has access to the directory and files, then try again.\n\nThis is not a SplameiPlay Studio issue.", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("The device you selected isn't ready so we can't hash it. Please make sure it is ready (i.e. inserting a floppy disk into a floppy drive) and try again\n\nThis is not a SplameiPlay Studio issue", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Something went wrong when trying to get a directory hash. Please contact us for support or make an issue on GitHub\n\nWe're sorry for any issues this may cause", "SplameiPlay Studio", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 return "Failed to hash dir!";
