@@ -193,6 +193,22 @@ namespace SplameiPlay.Studio
                     return;
                 }
 
+                if (keyStringValue.Text.Contains("="))
+                {
+                    var msgBox = MessageBox.Show("The string value you entered contains an equal sign which may cause issues when loading, depending on how SplameiPlay files are parsed. It's best to replace equal signs with different symbols like a dash to prevent these issues.\n\nWould you like us to replace it for you?", "SplameiPlay Studio", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                    if (msgBox == DialogResult.Yes)
+                    {
+                        string value = keyStringValue.Text;
+                        value = value.Replace("=", "-");
+                        keyStringValue.Text = value;
+                        changedValues = false;
+                    }
+                    else if (msgBox == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+
                 var valueData = data[currentSection][currentKey];
 
                 if (valueData.dataType == SplameiPlayFiles.fileValueDataType.Int)
