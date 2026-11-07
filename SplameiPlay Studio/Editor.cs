@@ -215,7 +215,7 @@ namespace SplameiPlay.Studio
                 if (newKey != currentKey)
                 {
                     data[currentSection].Remove(currentKey);
-                    data[currentSection][currentKey] = valueData;
+                    data[currentSection][newKey] = valueData;
 
                     currentNode.Tag = valueData;
 
