@@ -33,15 +33,12 @@
 
 ### Via SplameiPlay (Mainline)
 
-SplameiPlay Studio (should) be a native project to SplameiPlay. Because of this, you should be able to go into the store page, find 'SplameiPlay Studio' and install like you would with other projects.
-
-> [!NOTE]  
->  As of writing, SplameiPlay Studio is not available on the Stable and Beta channels and can only be natively installed on the Alpha channel
+SplameiPlay Studio is a native project to SplameiPlay. Because of this, you can to go into the store page, find 'SplameiPlay Studio' and install like you would with other projects.
 
 ### Via an installer file
 
 > [!NOTE]
-> The official installer file using the 2.0 (SplameiPlay Flow 1.2) server syntax. This means you cannot currently use the installer file on SplameiPlay Lite or Beta + Stable SplameiPlay Mainline builds
+> The official installer file using the 2.0 (SplameiPlay Flow 1.2) server syntax. This means you cannot currently use the installer file on SplameiPlay versions 5.2 and newer. We're working on updating the installer file for these newer version
 
 1. Download the latest installer file from the [release page](https://github.com/splameiplay/splameiplay-studio/releases) (It will end in `.spinstaller`)
 2. Open the downloaded file and accept the add prompt
